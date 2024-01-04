@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">The Sailings</string>
+    <string name="activity1_name">Find Course and Distance</string>
+    <string name="activity2_name">Find Destination Coordinate</string>
+    <string name="title_home">Calc Destination</string>
+    <string name="title_dashboard">Calc Course</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_calc_vector">CalcVectorActivity</string>
+</resources>

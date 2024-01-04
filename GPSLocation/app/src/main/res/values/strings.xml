@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GPS Location</string>
+    <string name="title_gps_state">GPS</string>
+    <string name="title_activity_scrolling_log">ScrollingLogActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="speedKts">Speed in Knots</string>
+    <string name="speedMph">Speed in  MPH</string>
+    <string name="PermsError">Config Allow Location</string>
+</resources>

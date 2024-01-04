@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/departureDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="date"
+        android:textSize="12sp"
+        app:layout_constraintRight_toLeftOf="@id/departureTime"
+        app:layout_constraintStart_toEndOf="@+id/DepartureLabel"
+        app:layout_constraintTop_toBottomOf="@id/StartMotorTimeTitle"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/departureTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:inputType="time"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/departureDate"
+        app:layout_constraintLeft_toRightOf="@+id/departureDate"
+        app:layout_constraintTop_toTopOf="@+id/departureDate"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/totalDistance"
+        android:layout_width="131dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TotalDistanceLabel"
+        app:layout_constraintTop_toBottomOf="@id/departureDate"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/desiredArrivalDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="date"
+        android:textSize="12sp"
+        app:layout_constraintRight_toLeftOf="@id/desiredArrivalTime"
+        app:layout_constraintStart_toEndOf="@+id/DesiredETALabel"
+        app:layout_constraintTop_toBottomOf="@id/totalDistance"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/desiredArrivalTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="time"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/desiredArrivalDate"
+        app:layout_constraintTop_toBottomOf="@id/totalDistance"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/slowSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SlowSpeedLabel"
+        app:layout_constraintTop_toBottomOf="@id/desiredArrivalDate"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/maxSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MaxSpeedLabel"
+        app:layout_constraintTop_toBottomOf="@id/slowSpeed"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/DepartureLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:text="Departure Time: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/departureDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/departureDate"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/TotalDistanceLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:text="Total Distance: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/totalDistance"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/totalDistance"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/DesiredETALabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:text="Desired ETA:"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/desiredArrivalDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/desiredArrivalDate"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/SlowSpeedLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:text="Slow Speed: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/slowSpeed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slowSpeed"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/MaxSpeedLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:text="Max Speed: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/maxSpeed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/maxSpeed"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/StartMotorTimeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:text="@string/start_motor_time"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="61dp" />
+
+    <TextView
+        android:id="@+id/StartMotorTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="Start Motor Time: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/startMotorTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startMotorTime"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <EditText
+        android:id="@+id/startMotorDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StartMotorTimeLabel"
+        app:layout_constraintTop_toTopOf="@+id/startMotorTime"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <EditText
+        android:id="@+id/startMotorTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startMotorDate"
+        app:layout_constraintTop_toBottomOf="@+id/Calculate"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/ActualETALabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="Actual ETA: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/actualETATime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/actualETATime"
+        app:layout_constraintWidth_percent="0.4" />
+    <EditText
+        android:id="@+id/actualETADate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ActualETALabel"
+        app:layout_constraintTop_toBottomOf="@id/startMotorTime"
+        app:layout_constraintWidth_percent="0.25" />
+    <EditText
+        android:id="@+id/actualETATime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/actualETADate"
+        app:layout_constraintTop_toBottomOf="@id/startMotorTime"
+        app:layout_constraintWidth_percent="0.25" />
+    <!-- -->
+    <TextView
+        android:id="@+id/SailToMotorHrsRatioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="Hrs Sail/Motor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/sailToMotorHrsRatio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sailToMotorHrsRatio"
+        app:layout_constraintWidth_percent="0.4" />
+    <EditText
+        android:id="@+id/sailToMotorHrsRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SailToMotorHrsRatioLabel"
+        app:layout_constraintTop_toBottomOf="@id/actualETATime"
+        app:layout_constraintWidth_percent="0.6" />
+    <!-- -->
+       <TextView
+        android:id="@+id/SailToMotorDistRatioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="Miles Sail/Motor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/sailToMotorDistRatio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sailToMotorDistRatio"
+        app:layout_constraintWidth_percent="0.4" />
+    <EditText
+        android:id="@+id/sailToMotorDistRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="none"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SailToMotorDistRatioLabel"
+        app:layout_constraintTop_toBottomOf="@id/sailToMotorHrsRatio"
+        app:layout_constraintWidth_percent="0.6" />
+    <Button
+        android:id="@+id/Calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginRight="155dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxSpeed" />
+</androidx.constraintlayout.widget.ConstraintLayout>
