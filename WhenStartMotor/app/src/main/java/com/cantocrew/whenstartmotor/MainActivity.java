@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(@NonNull View v) {
                 readFieldValues();
                 paintFieldValues();
+                InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
             }
         };
         calculateButton.setOnClickListener(calculateListener);
