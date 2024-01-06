@@ -13,11 +13,7 @@ import com.cantocrew.navigation.sailings.*;
 import java.util.ArrayList;
 
 public class GpsHandler extends AppCompatActivity implements LocationListener {
-    // private static final int TIME_BETWEEN_FIXES = 1000; // MS DEBUG
-    // private static final int DEFAULT_POLLING_DISTANCE = 0; // meters DEBUG
     private static final int ONE_SECOND = 1000;
-    private static final int ONE_MINUTE = ONE_SECOND * 60;
-    private static final int ONE_HOUR = ONE_MINUTE * 60;
     private static final double KTS2MPH=1.15078;
     private static final int TIME_BETWEEN_FIXES = 2*ONE_SECOND ;
     private static final int DEFAULT_POLLING_DISTANCE = 1; // meters
@@ -38,12 +34,8 @@ public class GpsHandler extends AppCompatActivity implements LocationListener {
             Coordinate src = new Coordinate(new Ordinate(prevLocation.getLatitude(), OrdinateType.LAT), new Ordinate(prevLocation.getLongitude(), OrdinateType.LON));
             Coordinate dst = new Coordinate(new Ordinate(location.getLatitude(),     OrdinateType.LAT), new Ordinate(location.getLongitude(),     OrdinateType.LON));
             Vector v = Vector.getVector(src, dst);
-            // Manual speed calculation. Not extremely accurate for close points.
-//            double delta_time_hrs = (location.getTime() - prevLocation.getTime()) / ( ONE_HOUR * 1.0) ;
-//            speedKts = v.distance / delta_time_hrs; // Manual speed calculation.
             speedKts = Formatters.metersPerSecondToKnots(location.getSpeed());
             headingTrue = v.direction; 
-//            headingTrue = location.getBearing();
         }
         for (LocationChangedListener l : locationChangedListeners) l.locationChanged(location);
         prevLocation=location;
@@ -53,8 +45,7 @@ public class GpsHandler extends AppCompatActivity implements LocationListener {
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         System.out.println("onStatusChanged("+provider+","+status+","+extras);
-        String statusStr;
-        boolean rc=false;
+        boolean rc;
         if (prevStatus == status) return; // Ignore if no real status change.
         prevStatus = status;
         switch (status) {
@@ -108,15 +99,5 @@ public class GpsHandler extends AppCompatActivity implements LocationListener {
     @SuppressLint("MissingPermission")
     public Location getLastKnownLocation() {
         return locationManager.getLastKnownLocation("gps");
-    }
-
-    /**
-     * Checks whether two providers are the same
-     */
-    private boolean isSameProvider(String provider1, String provider2) {
-        if (provider1 == null) {
-            return provider2 == null;
-        }
-        return provider1.equals(provider2);
     }
 }

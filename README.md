@@ -1,22 +1,26 @@
 # Steps to get project onto phone
 
-## In Git, cloned AndroidStudioProjects: 
- - [https://github.com/adrian2465/AndroidStudioProjects](https://github.com/adrian2465/AndroidStudioProjects)
+## Initial setup
+ - Installed `Android` and `Android Design Tools`
+ - Created simulator for Samsung Galaxy S23+
 
 ## To setup project in ADS
- - Installed `Android` and `Android Design Tools`
- - Re-copied Google Drive source to ADS-managed (git) directory, which restored the gradle project files.
- - Created simulator for Samsung Galaxy S23+
- - Updated Android Gradle Project (AGP) per recommendations to 4.2.2 (and then again to 7.4.2) (and then again to 8.4.1)
+ - Cloned AndroidStudioProjects from Github - [https://github.com/adrian2465/AndroidStudioProjects](https://github.com/adrian2465/AndroidStudioProjects)
+ - Copied Google Drive to project directory. E.g. `cp -R ~/Google\ Drive/My\ Drive/Skunkworks/AndroidStudioProjects/GPSLocation/ GPSLocation/`
+ - IS THIS NECESSARY?: Remove from project `.idea,` `.gradle,` `app/build,` `*.iml`
+ - Open project in Intellij and let it do its thing.
+ - (Initial only?) Updated Android Gradle Project (AGP) per recommendations to 4.2.2 (and then again to 7.4.2) (and then again to 8.4.1)
 
-## For WhenToStartMotor:
- - PROBABLY NOT NEEDED Restored 'app' which had been removed by the Gradle project reload.
- - PROBABLY NOT NEEDED app was removed again during rebuild.  "The IDE modules below were removed by the Gradle project reload: app"
+## For Each App:
  - Downloaded icons from [https://icon.kitchen](https://icon.kitchen).  NOTE: Did not download round ones.
  - Placed icons onto mipmap in Resource Manager. Overwrite all.
+   - In zip archive, drill down to `Location -> Android -> res`
+   - Copy `res`
+   - Paste into `$project -> src -> main -> res` and replace all.
 
 ## Installing the App on the phone
-### One time setup on Android
+
+### One time setup on Android - Development
  - https://developer.android.com/studio/debug/dev-options#enable 
    - Enable Developer Options by tapping Build Number 7 times
    - Under Developer Options, turn on "Stay Awake While Charging"
