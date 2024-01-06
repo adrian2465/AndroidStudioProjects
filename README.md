@@ -33,6 +33,13 @@
  - Probably can disable USB Debugging again afterwards.
 
 
+# 2024-01-06 @ 12:18:46 : Color Scheme (Teal)
+```
+<color name="colorPrimary">#00BCD4</color>
+<color name="colorPrimaryDark">#3700B3</color>
+<color name="colorAccent">#009688</color>
+```
+
 # 2024-01-06 @ 09:13:11 : Links
 * For The Sailings: https://icon.kitchen/i/H4sIAAAAAAAAA1VOzQ6CMAx%2Bl3rlAEQNcuXgC3AzxnSs1IWxkQ00hvDudhoPXtr0%2B%2Fr9rPBAu1CEegWNYWjvNBLUPdpIGfTcWDNhmBMdSRZo6nGxM2RgOu8EYHIUcDaOb7MfyEXYMlDceOuD0Ls8V53ey7%2Fi9jWJN3BAbcglD8Xn3yEJXdIUf6IPVH6h07GqBELHVmyK8rBJ0uj1YlP%2FixA6eKNTNR9lPknBdXsDp54jLeIAAAA%3D
 * For Position
