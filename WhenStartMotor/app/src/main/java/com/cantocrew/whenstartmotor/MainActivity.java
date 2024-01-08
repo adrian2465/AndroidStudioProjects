@@ -27,10 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mDepartureTime, mDepartureDate,mTotalDistance,mDesiredArrivalTime,mDesiredArrivalDate,mSlowSpeed, mFastSpeed;
     private TextView mStartMotorDate, mStartMotorTime, mActualETADate, mActualETATime, mHoursStats, mDistStats;
     private Button calculateButton;
-    private TextView logTextView;
     private Logger log=null;
     private Calculator calc=new Calculator();
-    private final AppCompatActivity context = this;
     private Button.OnClickListener calculateListener;
     private List<TextView> allFields;
     @Override
@@ -38,14 +36,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         calculateButton = findViewById(R.id.Calculate);
-        calculateListener = new Button.OnClickListener() {
-            @Override
-            public void onClick(@NonNull View v) {
-                readFieldValues();
-                paintFieldValues();
-                InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
-            }
+        calculateListener = v -> {
+            readFieldValues();
+            paintFieldValues();
+            InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
         };
         calculateButton.setOnClickListener(calculateListener);
         allFields=Arrays.asList (
